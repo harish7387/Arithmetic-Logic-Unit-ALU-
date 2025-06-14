@@ -1,32 +1,32 @@
 `timescale 1 ns / 1 ns
-module alu(a,b,c,x,y);
+module alu(a,b,x,y,z);
 input [3:0]a,b;
-input [2:0]c;
-output [3:0]x;
-output y;
+input [2:0]x;
+output [3:0]y;
+output z;
 
-reg [3:0]x;
-reg y;
+reg [3:0]y;
+reg z;
 
-always @(a,b,c) begin
+always @(a,b,x) begin
 case (x)
 3'b000 : begin
-{y,x} = a+b;
+{z,y} = a+b;
 end
 3'b001 : begin
-{y,x} = a-b;
+{z,y} = a-b;
 end
 3'b010 : begin
-x = a & b;
+y = a & b;
 end
 3'b011 = begin
-x = a | b;
+y = a | b;
 end
 3'b100 = begin
-x = a ^ b;
+y = a ^ b;
 end
 3'b101 = begin
-x = ~a;
+y = ~a;
 end
 
 default: begin
