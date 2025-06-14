@@ -23,4 +23,8 @@ RESULTS:
 
           
 
-     
+     ![Image](https://github.com/user-attachments/assets/32862782-aba9-4846-9a3d-2ec6ab12e2f5)
+
+3.Physical Design:
+
+
