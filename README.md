@@ -14,4 +14,13 @@
 
 RESULTS:
 
+1.Simulation:
+
+           ![Image](https://github.com/user-attachments/assets/2fe0201c-c67c-452e-ab5e-5047e86e3c4b)
+
+
+2.Synthesis:
+
+          
+
      
