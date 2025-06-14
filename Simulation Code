@@ -1,21 +1,37 @@
-module ALU (
-    input  [3:0] A,
-    input  [3:0] B,
-    input  [2:0] c,
-    output reg [3:0] Result,
-    output reg Carry_out,
-    output Zero
-);
-    always @(*) begin
-        Carry_out = 0;
-      case (c)
-            3'b000: {Carry_out, Result} = A + B;
-            3'b001: {Carry_out, Result} = A - B;
-            3'b010: Result = A & B;
-            3'b011: Result = A | B;
-            3'b100: Result = ~A;
-            default: Result = 4'b0000;
-        endcase
-    end
-    assign Zero = (Result == 4'b0000) ? 1'b1 : 1'b0;
+`timescale 1 ns / 1 ns
+module alu(a,b,c,x,y);
+input [3:0]a,b;
+input [2:0]c;
+output [3:0]x;
+output y;
+
+reg [3:0]x;
+reg y;
+
+always @(a,b,c) begin
+case (x)
+3'b000 : begin
+{y,x} = a+b;
+end
+3'b001 : begin
+{y,x} = a-b;
+end
+3'b010 : begin
+x = a & b;
+end
+3'b011 = begin
+x = a | b;
+end
+3'b100 = begin
+x = a ^ b;
+end
+3'b101 = begin
+x = ~a;
+end
+
+default: begin
+y = 4'b0;
+end
+endcase
+end 
 endmodule
